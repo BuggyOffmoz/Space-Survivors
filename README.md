@@ -16,6 +16,7 @@ libre and open source game engine.
 - `snake_case` is **like_this**.
 - `camelCase` is **likeThis**.
 - `PascalCase` is **LikeThis**.
+- `Pascal_Snake_Case` is **Like_This**.
 - `UPPER_SNAKE_CASE` is **LIKE_THIS**.
 
 ___
@@ -24,9 +25,9 @@ ___
 
 - Use `UPPER_SNAKE_CASE` for constants.
 - Use `snake_case` for variables and functions.
-- Use `snake_case` for input map names.
-- Use `snake_case` for all file names.
-- Use `PascalCase` for node names.
+- Use `Pascal_Snake_Case` for input map names.
+- Use `PascalCase` for all file names.
+- Use `snake_case` for node names.
 - Use `PascalCase` for classes.
 
 ## Functions

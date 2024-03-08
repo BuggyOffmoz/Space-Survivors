@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvpjwxmc0kwlk"]
+
+[ext_resource type="Script" path="res://Scenes/Players/Ships/BaseShip.gd" id="1_xjvo8"]
+[ext_resource type="Texture2D" uid="uid://c2h72x8fwvj77" path="res://Assets/Textures/Ships/BaseShip.png" id="2_wiaov"]
+[ext_resource type="Texture2D" uid="uid://2fi5iyyefda8" path="res://Assets/Textures/Ships/BaseShip2.png" id="3_eh0xf"]
+[ext_resource type="Texture2D" uid="uid://c6lkc5r1j7uxg" path="res://Assets/Textures/Particles/smoke2.png" id="3_ewpre"]
+[ext_resource type="PackedScene" uid="uid://boobj08fpbiqh" path="res://Scenes/Components/BaseShipMovement/BaseShipMovement.tscn" id="4_svrud"]
+[ext_resource type="PackedScene" uid="uid://cenb2smu55mvy" path="res://Scenes/Components/SpecialShipMovement/DriftMovement.tscn" id="5_ql18j"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1r14e"]
+particles_animation = true
+particles_anim_h_frames = 9
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t7bf1"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(3, 3, 0)
+emission_shape = 1
+emission_sphere_radius = 14.57
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+scale_min = 3.0
+scale_max = 3.0
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="BaseShip" type="Node2D" node_paths=PackedStringArray("MovementComponent", "special_movement")]
+script = ExtResource("1_xjvo8")
+MovementComponent = NodePath("Movements/BaseShipMovement")
+special_movement = NodePath("Movements/DriftMovement")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="BaseShip" type="Sprite2D" parent="Graphics"]
+visible = false
+position = Vector2(62, -15)
+scale = Vector2(2.10417, 2.10417)
+texture = ExtResource("2_wiaov")
+
+[node name="ShipSprite" type="Sprite2D" parent="Graphics"]
+scale = Vector2(2.10417, 2.10417)
+texture = ExtResource("3_eh0xf")
+offset = Vector2(-1.77581e-06, -8.89041)
+
+[node name="DriftParticles" type="GPUParticles2D" parent="Graphics"]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_1r14e")
+position = Vector2(29, 79)
+emitting = false
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_t7bf1")
+texture = ExtResource("3_ewpre")
+lifetime = 2.0
+speed_scale = 2.0
+
+[node name="Movements" type="Node2D" parent="."]
+
+[node name="BaseShipMovement" parent="Movements" node_paths=PackedStringArray("ship", "graphics") instance=ExtResource("4_svrud")]
+ship = NodePath("../..")
+graphics = NodePath("../../Graphics")
+
+[node name="DriftMovement" parent="Movements" node_paths=PackedStringArray("MovementComponent", "ship", "graphics") instance=ExtResource("5_ql18j")]
+MovementComponent = NodePath("../BaseShipMovement")
+ship = NodePath("../..")
+graphics = NodePath("../../Graphics")

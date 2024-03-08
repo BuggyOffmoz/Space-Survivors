@@ -1,0 +1,138 @@
+[gd_scene load_steps=11 format=3 uid="uid://pd6873m7n8y1"]
+
+[ext_resource type="Script" path="res://Test.gd" id="1_oicls"]
+[ext_resource type="Texture2D" uid="uid://dtmm4itht3jbe" path="res://icon.svg" id="2_pft6n"]
+[ext_resource type="PackedScene" uid="uid://dvpjwxmc0kwlk" path="res://Scenes/Players/Ships/BaseShip.tscn" id="3_ntwrc"]
+[ext_resource type="PackedScene" uid="uid://fukb20hdncus" path="res://Scenes/Players/Turrets/BaseTurret.tscn" id="4_xbqrr"]
+[ext_resource type="PackedScene" uid="uid://hmyw0u5dsuy4" path="res://Scenes/Components/BulletManager/BulletManager.tscn" id="5_mbnvb"]
+[ext_resource type="PackedScene" uid="uid://ba1qlbrtnpkac" path="res://Scenes/Components/EnemySpawner/EnemySpawner.tscn" id="6_311yc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb46m"]
+size = Vector2(1280, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0los"]
+size = Vector2(1280, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghtmh"]
+size = Vector2(720, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nol42"]
+size = Vector2(720, 40)
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_oicls")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1504.0
+offset_top = -716.0
+offset_right = 3220.0
+offset_bottom = 1772.0
+color = Color(0, 0, 0, 1)
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(611, 503)
+scale = Vector2(12.6172, 12.6172)
+texture = ExtResource("2_pft6n")
+
+[node name="BulletManager" parent="." instance=ExtResource("5_mbnvb")]
+unique_name_in_owner = true
+z_index = 10
+
+[node name="Players" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="BaseShip" parent="Players" node_paths=PackedStringArray("MovementComponent", "special_movement", "turret") instance=ExtResource("3_ntwrc")]
+position = Vector2(646, 383)
+rotation = -0.00398356
+MovementComponent = NodePath("Movements/BaseShipMovement")
+special_movement = NodePath("Movements/DriftMovement")
+turret = NodePath("../BaseTurret")
+
+[node name="BaseTurret" parent="Players" instance=ExtResource("4_xbqrr")]
+position = Vector2(647, 385)
+turret_type = "gatlin"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 139.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 65
+
+[node name="MainMenu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 1288.0
+offset_bottom = 735.0
+
+[node name="Start" type="Button" parent="CanvasLayer/MainMenu"]
+layout_mode = 0
+offset_left = 1155.0
+offset_top = 636.0
+offset_right = 1248.0
+offset_bottom = 694.0
+theme_override_font_sizes/font_size = 36
+text = "Start"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainMenu"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 400.0
+offset_right = 889.0
+offset_bottom = 712.0
+theme_override_font_sizes/normal_font_size = 41
+
+[node name="EnemySpawner" parent="." instance=ExtResource("6_311yc")]
+
+[node name="ScreenLimits" type="Node2D" parent="."]
+
+[node name="Limit1" type="Area2D" parent="ScreenLimits"]
+position = Vector2(0, -1)
+collision_layer = 524288
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLimits/Limit1"]
+position = Vector2(640, -19)
+shape = SubResource("RectangleShape2D_nb46m")
+
+[node name="Limit2" type="Area2D" parent="ScreenLimits"]
+position = Vector2(0, 717)
+collision_layer = 524288
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLimits/Limit2"]
+position = Vector2(640, 23)
+shape = SubResource("RectangleShape2D_g0los")
+
+[node name="Limit3" type="Area2D" parent="ScreenLimits"]
+collision_layer = 524288
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLimits/Limit3"]
+position = Vector2(-20, 360)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ghtmh")
+
+[node name="Limit4" type="Area2D" parent="ScreenLimits"]
+position = Vector2(1276, 0)
+collision_layer = 524288
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLimits/Limit4"]
+position = Vector2(24, 360)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nol42")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(639, 362)
+zoom = Vector2(0.71, 0.71)
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/Start" to="." method="_on_start_pressed"]

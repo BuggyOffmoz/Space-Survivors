@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://boiw56p43aceq"]
+
+[ext_resource type="Script" path="res://Scenes/Components/BaseBullet/BaseBullet.gd" id="1_rdl0y"]
+[ext_resource type="Texture2D" uid="uid://pt1n3r7kbacl" path="res://Assets/Textures/Bullets/BulletCol1OGApre1.png" id="2_lrid4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ojeo"]
+radius = 4.0
+
+[node name="BaseBullet" type="Area2D"]
+visible = false
+collision_layer = 0
+collision_mask = 526336
+script = ExtResource("1_rdl0y")
+
+[node name="Graphics" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Bullet" type="Sprite2D" parent="Graphics"]
+rotation = 1.5708
+texture = ExtResource("2_lrid4")
+
+[node name="Effects" type="Node2D" parent="."]
+rotation = 0.072745
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_6ojeo")
+disabled = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

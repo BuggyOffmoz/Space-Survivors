@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cenb2smu55mvy"]
+
+[ext_resource type="Script" path="res://Scenes/Components/SpecialShipMovement/DriftMovement.gd" id="1_n04ra"]
+
+[node name="DriftMovement" type="Node2D"]
+script = ExtResource("1_n04ra")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="DriftCooldown" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Timers/DriftCooldown" to="." method="_on_drift_cooldown_timeout"]

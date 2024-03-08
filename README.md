@@ -27,7 +27,7 @@ ___
 - Use `snake_case` for variables and functions.
 - Use `Pascal_Snake_Case` for input map names.
 - Use `PascalCase` for all file names.
-- Use `snake_case` for node names.
+- Use `PascalCase` for node names.
 - Use `PascalCase` for classes.
 
 ## Functions

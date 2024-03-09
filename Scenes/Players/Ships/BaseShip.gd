@@ -2,6 +2,8 @@ extends Node2D
 
 class_name BaseShip
 
+@export var d = {}
+
 var first_movement_fix := true
 #var level : global_level
 @export var MovementComponent : BaseShipMovement

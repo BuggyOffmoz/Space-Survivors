@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dc03at62va0ti"]
+[gd_resource type="Resource" script_class="AutoTurretConfig" load_steps=2 format=3 uid="uid://dc03at62va0ti"]
 
 [ext_resource type="Script" path="res://Resources/TurretConfigs/TurretConfigs.gd" id="1_kts2f"]
 
 [resource]
 script = ExtResource("1_kts2f")
+b = ["HI", "BYE", null, null, null, null]

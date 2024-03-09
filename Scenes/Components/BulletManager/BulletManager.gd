@@ -5,7 +5,7 @@ class_name BulletManager
 var bullets_aviable : Array
 
 func _ready() -> void:
-	for index in 2000:
+	for index in 3:
 		var new_bullet = preload("res://Scenes/Components/BaseBullet/BaseBullet.tscn").instantiate()
 		bullets_aviable.append(new_bullet)
 		new_bullet.name = "Bullet"

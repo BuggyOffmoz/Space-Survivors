@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Players/Ships/BaseShip.gd" id="1_xjvo8"]
 [ext_resource type="Texture2D" uid="uid://c2h72x8fwvj77" path="res://Assets/Textures/Ships/BaseShip.png" id="2_wiaov"]
-[ext_resource type="Texture2D" uid="uid://2fi5iyyefda8" path="res://Assets/Textures/Ships/BaseShip2.png" id="3_eh0xf"]
+[ext_resource type="Texture2D" uid="uid://2fi5iyyefda8" path="res://Assets/Textures/Ships/BaseShip2.png" id="3_5148d"]
 [ext_resource type="Texture2D" uid="uid://c6lkc5r1j7uxg" path="res://Assets/Textures/Particles/smoke2.png" id="3_ewpre"]
 [ext_resource type="PackedScene" uid="uid://boobj08fpbiqh" path="res://Scenes/Components/BaseShipMovement/BaseShipMovement.tscn" id="4_svrud"]
 [ext_resource type="PackedScene" uid="uid://cenb2smu55mvy" path="res://Scenes/Components/SpecialShipMovement/DriftMovement.tscn" id="5_ql18j"]
@@ -41,7 +41,7 @@ texture = ExtResource("2_wiaov")
 
 [node name="ShipSprite" type="Sprite2D" parent="Graphics"]
 scale = Vector2(2.10417, 2.10417)
-texture = ExtResource("3_eh0xf")
+texture = ExtResource("3_5148d")
 offset = Vector2(-1.77581e-06, -8.89041)
 
 [node name="DriftParticles" type="GPUParticles2D" parent="Graphics"]

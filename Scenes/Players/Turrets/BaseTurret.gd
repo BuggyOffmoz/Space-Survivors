@@ -2,6 +2,8 @@ extends Node2D
 
 class_name Turret
 
+var t_test := AutoTurretConfig.new()
+
 var turret_config := AutoTurretConfig.new()
 @onready var bullet_manager : BulletManager = get_parent().owner.get_node("BulletManager")
 
@@ -91,7 +93,7 @@ func triple_shoothing(_direction:Vector2):
 	var chase := true
 	var index_a := 0
 	 
-	for x in 20:
+	for x in 40:
 		var new_bullet = bullet_manager.get_bullet()
 		
 		new_bullet.bullet_stats = turret_config.bullet_info.duplicate()

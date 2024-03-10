@@ -43,11 +43,9 @@ z_index = 10
 unique_name_in_owner = true
 visible = false
 
-[node name="BaseShip" parent="Players" node_paths=PackedStringArray("MovementComponent", "special_movement", "turret") instance=ExtResource("3_ntwrc")]
+[node name="BaseShip" parent="Players" node_paths=PackedStringArray("turret") instance=ExtResource("3_ntwrc")]
 position = Vector2(646, 383)
 rotation = -0.00398356
-MovementComponent = NodePath("Movements/BaseShipMovement")
-special_movement = NodePath("Movements/DriftMovement")
 turret = NodePath("../BaseTurret")
 
 [node name="BaseTurret" parent="Players" instance=ExtResource("4_xbqrr")]

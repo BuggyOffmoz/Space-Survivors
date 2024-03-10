@@ -3,6 +3,7 @@ extends Resource
 class_name AutoTurretConfig
 
 var turret : Turret
+#@onready var test_turret : turret.NamedEnum
 
 var bullet_info = {
 	"attack_count" : 0,
@@ -20,7 +21,9 @@ var bullet_info = {
 }
 
 
-func auto_config(_turret_type:String,_turret:Turret):
+func auto_config(_turret_type,_turret:Turret):
+	print(turret.NamedEnum.get(2))
+	
 	turret = _turret
 	if has_method(_turret_type+"_config"):
 		call(_turret_type+"_config")

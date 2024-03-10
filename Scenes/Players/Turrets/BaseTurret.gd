@@ -2,6 +2,10 @@ extends Node2D
 
 class_name Turret
 
+
+enum NamedEnum {THING_1, THING_2, ANOTHER_THING}
+@export var x: NamedEnum
+
 var t_test := AutoTurretConfig.new()
 
 var turret_config := AutoTurretConfig.new()
@@ -24,7 +28,7 @@ var move_y : float
 
 
 func _ready():
-	turret_config.auto_config(turret_type,self)
+	turret_config.auto_config(x,self)
 	%CadenceCooldown.wait_time = cadence
 
 func _input(event):

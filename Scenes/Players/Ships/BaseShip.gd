@@ -2,7 +2,7 @@ extends Node2D
 
 class_name BaseShip
 
-@export var d = {}
+@export_enum("SHIPa","SHIPb") var d : String
 
 var first_movement_fix := true
 #var level : global_level

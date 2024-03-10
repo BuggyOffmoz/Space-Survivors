@@ -52,7 +52,6 @@ turret = NodePath("../BaseTurret")
 
 [node name="BaseTurret" parent="Players" instance=ExtResource("4_xbqrr")]
 position = Vector2(647, 385)
-turret_type = "gatlin"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

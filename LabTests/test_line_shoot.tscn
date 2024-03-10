@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxmjak633trjm"]
 
-[ext_resource type="Script" path="res://test_line_shoot.gd" id="1_t1a38"]
+[ext_resource type="Script" path="res://LabTests/test_line_shoot.gd" id="1_t1a38"]
 [ext_resource type="Texture2D" uid="uid://d587aw5kie2f" path="res://Assets/Textures/Bullets/RASHOILAZER.png" id="2_g4uxx"]
 
 [node name="TestLineShoot" type="Node2D"]

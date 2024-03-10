@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://pd6873m7n8y1"]
 
-[ext_resource type="Script" path="res://Test.gd" id="1_oicls"]
+[ext_resource type="Script" path="res://LabTests/Test.gd" id="1_oicls"]
 [ext_resource type="Texture2D" uid="uid://dtmm4itht3jbe" path="res://icon.svg" id="2_pft6n"]
 [ext_resource type="PackedScene" uid="uid://dvpjwxmc0kwlk" path="res://Scenes/Players/Ships/BaseShip.tscn" id="3_ntwrc"]
 [ext_resource type="PackedScene" uid="uid://fukb20hdncus" path="res://Scenes/Players/Turrets/BaseTurret.tscn" id="4_xbqrr"]

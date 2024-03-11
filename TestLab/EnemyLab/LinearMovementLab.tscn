@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://crvajnfgtj60a"]
+
+[ext_resource type="PackedScene" uid="uid://crcpxotq6pted" path="res://TestLab/EnemyLab/TestSpaceship.tscn" id="1_twqyr"]
+
+[node name="EnemyLab" type="Node2D"]
+
+[node name="TestEnemy" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(626, 300)
+
+[node name="MovementComponent" parent="TestEnemy" index="2"]
+speed = 0.1
+
+[node name="targetVector" parent="TestEnemy/MovementComponent" index="0"]
+position = Vector2(-84.6582, -111.752)
+
+[node name="TestEnemy2" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(828, 402)
+
+[node name="MovementComponent" parent="TestEnemy2" index="2"]
+speed = 1.0
+
+[node name="targetVector" parent="TestEnemy2/MovementComponent" index="0"]
+position = Vector2(-60.6582, 55.2484)
+
+[node name="TestEnemy3" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(549, 457)
+
+[node name="MovementComponent" parent="TestEnemy3" index="2"]
+speed = 2.0
+
+[node name="targetVector" parent="TestEnemy3/MovementComponent" index="0"]
+position = Vector2(103.342, 29.2484)
+
+[node name="TestEnemy4" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(438, 235)
+
+[node name="MovementComponent" parent="TestEnemy4" index="2"]
+speed = 3.0
+
+[node name="targetVector" parent="TestEnemy4/MovementComponent" index="0"]
+position = Vector2(23.3418, 159.248)
+
+[node name="TestEnemy5" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(753, 272)
+
+[node name="targetVector" parent="TestEnemy5/MovementComponent" index="0"]
+position = Vector2(101.342, -112.752)
+
+[node name="TestEnemy6" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(626, 300)
+
+[node name="MovementComponent" parent="TestEnemy6" index="2"]
+speed = 0.1
+
+[node name="targetVector" parent="TestEnemy6/MovementComponent" index="0"]
+position = Vector2(-84.6582, -111.752)
+
+[node name="TestEnemy7" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(828, 402)
+
+[node name="MovementComponent" parent="TestEnemy7" index="2"]
+speed = 1.0
+
+[node name="targetVector" parent="TestEnemy7/MovementComponent" index="0"]
+position = Vector2(-60.6582, 55.2484)
+
+[node name="TestEnemy8" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(549, 457)
+
+[node name="MovementComponent" parent="TestEnemy8" index="2"]
+speed = 2.0
+
+[node name="targetVector" parent="TestEnemy8/MovementComponent" index="0"]
+position = Vector2(103.342, 29.2484)
+
+[node name="TestEnemy9" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(438, 235)
+
+[node name="MovementComponent" parent="TestEnemy9" index="2"]
+speed = 3.0
+
+[node name="targetVector" parent="TestEnemy9/MovementComponent" index="0"]
+position = Vector2(23.3418, 159.248)
+
+[node name="TestEnemy10" parent="." instance=ExtResource("1_twqyr")]
+position = Vector2(753, 272)
+
+[node name="targetVector" parent="TestEnemy10/MovementComponent" index="0"]
+position = Vector2(101.342, -112.752)
+
+[editable path="TestEnemy"]
+[editable path="TestEnemy2"]
+[editable path="TestEnemy3"]
+[editable path="TestEnemy4"]
+[editable path="TestEnemy5"]
+[editable path="TestEnemy6"]
+[editable path="TestEnemy7"]
+[editable path="TestEnemy8"]
+[editable path="TestEnemy9"]
+[editable path="TestEnemy10"]

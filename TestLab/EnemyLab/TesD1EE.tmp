@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://crcpxotq6pted"]
+
+[ext_resource type="PackedScene" uid="uid://diuejpqjc7bjv" path="res://TestLab/EnemyLab/Components/MovementComponent.tscn" id="2_onyye"]
+[ext_resource type="Texture2D" uid="uid://c2h72x8fwvj77" path="res://Assets/Textures/Ships/BaseShip.png" id="3_6tysj"]
+[ext_resource type="Script" path="res://TestLab/EnemyLab/Components/MovementComponent.gd" id="3_peb8n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_llkv7"]
+radius = 38.0132
+
+[node name="TestEnemy" type="Area2D"]
+position = Vector2(641, 382)
+collision_layer = 2048
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_llkv7")
+disabled = true
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="EnemySprite" type="Sprite2D" parent="Graphics"]
+position = Vector2(1.90735e-06, 1.90735e-06)
+rotation = 1.5728
+scale = Vector2(2.96487, 2.96487)
+texture = ExtResource("3_6tysj")
+
+[node name="MovementComponent" parent="." instance=ExtResource("2_onyye")]
+script = ExtResource("3_peb8n")
+speed = 10.0
+
+[node name="targetVector" type="Marker2D" parent="MovementComponent"]
+position = Vector2(111, -57)

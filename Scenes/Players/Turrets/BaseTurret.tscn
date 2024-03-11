@@ -24,6 +24,7 @@ region_rect = Rect2(1013.99, 89.3288, 235.795, 231.508)
 unique_name_in_owner = true
 one_shot = true
 
-[node name="Buffs" type="Node2D" parent="."]
+[node name="BulletBuffs" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="Timers/CadenceCooldown" to="." method="_on_cadence_cooldown_timeout"]

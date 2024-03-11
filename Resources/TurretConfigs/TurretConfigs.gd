@@ -20,19 +20,23 @@ var bullet_info = {
 }
 
 
-func auto_config(_turret_type:String,_turret:Turret):
+func auto_config(_turret_type:int,_turret:Turret):
+	
+	var turret_type = turret.all_turret_type.keys()[_turret_type].to_lower()
 	turret = _turret
-	if has_method(_turret_type+"_config"):
-		call(_turret_type+"_config")
+	
+	if has_method(turret_type+"_config"):
+		call(turret_type+"_config")
+	else:
+		push_error("This Turret ´ID´ was not found: "+turret_type)
 
 
-func gatlin_config():
-	turret.cadence = 0.007
+func gatling_config():
+	turret.cadence = 0.07
 	bullet_info.damage = 30.0
 	bullet_info.speed = 25.0
 	bullet_info.top_distance = 700.0
 	bullet_info.size = 6.2
-	bullet_info
 	turret.forward_distance_cannon = 60
 	bullet_info.bounce_amount = 0
 

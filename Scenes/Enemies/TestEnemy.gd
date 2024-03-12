@@ -2,7 +2,7 @@ extends Area2D
 
 class_name BaseEnemy
 
-var life := 200
+var life := 200.0
 
 @onready var base_movement : BaseEnemyMovement = get_node("Movement/BaseEnemyMovement")
 var EnemyManager : EnemySpawner

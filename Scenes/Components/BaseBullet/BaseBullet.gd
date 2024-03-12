@@ -2,7 +2,7 @@ extends Area2D
 
 class_name BaseBullet
 
-@onready var Bullet_Manager : BulletManager = get_parent()
+@onready var Bullet_Manager : BulletManager = get_parent().get_parent()
  
 
 var aviable := true
@@ -19,7 +19,7 @@ var bullet_stats = {
 	"speed_damp" : 0.0
 }
 
-func _physics_process(delta) -> void:
+func _physics_process(_delta) -> void:
 	if in_use:
 		normal_movement()
 	

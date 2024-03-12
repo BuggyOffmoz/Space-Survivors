@@ -3,7 +3,7 @@ extends Area2D
 
 class_name LazerBullet
 
-@onready var Bullet_Manager : BulletManager = get_parent()
+@onready var Bullet_Manager : BulletManager = get_parent().get_parent()
 @onready var wall_detector : RayCast2D = get_node("Detector/WallDetector")
 
 var aviable := true

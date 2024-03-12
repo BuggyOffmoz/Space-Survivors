@@ -4,8 +4,8 @@ class_name Turret
 
 enum all_turret_type {
 	GATLING,
-	COHETE,
-	VOID_LASER
+	VOID_LASER,
+	COHETE
 }
 @export var turret_type : all_turret_type
 
@@ -32,6 +32,7 @@ func _ready():
 	
 	turret_config.auto_config(turret_type,self)
 	%CadenceCooldown.wait_time = cadence
+	bullet_manager.create_bullets(turret_type)
 
 func _input(event):
 	
@@ -88,6 +89,9 @@ func shoot():
 func calculate_distance_and_init_position_for_bullet():
 	turret_config.bullet_info.initial_position = %Graphcis.global_position + (Vector2.UP.rotated(%Graphcis.rotation) * forward_distance_cannon)
 	turret_config.bullet_info.direction =  %Graphcis.global_position.direction_to(turret_config.bullet_info.initial_position)
+
+func change_turret_type(type:=0):
+	turret_config.auto_config(0,self)
 
 ## TEST
 func triple_shoothing(_direction:Vector2):

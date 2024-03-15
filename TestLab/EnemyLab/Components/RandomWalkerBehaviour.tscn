@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btoaewv6i4jlg"]
+
+[ext_resource type="Script" path="res://TestLab/EnemyLab/Components/RandomWalkerBehaviour.gd" id="1_3jofx"]
+
+[node name="RandomWalkerBehaviour" type="Node"]
+script = ExtResource("1_3jofx")

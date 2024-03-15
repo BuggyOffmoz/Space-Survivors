@@ -11,7 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	# Being called in physics_process, delta is a constant and there is no need to adjust speed for it
-	get_parent().position += targetVector * speed
-	print(get_parent().position)
+	get_parent().position += targetVector.normalized() * speed
 
-	
+func setTarget(newPosition: Vector2):
+	targetVector = newPosition

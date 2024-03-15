@@ -1,22 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://crvajnfgtj60a"]
+[gd_scene load_steps=5 format=3 uid="uid://crvajnfgtj60a"]
 
+[ext_resource type="Texture2D" uid="uid://bhiew8x8dsa2w" path="res://Assets/SBS - Seamless Space Backgrounds - Large 1024x1024/Large 1024x1024/Blue Nebula/Blue_Nebula_01-1024x1024.png" id="1_gq37b"]
 [ext_resource type="PackedScene" uid="uid://crcpxotq6pted" path="res://TestLab/EnemyLab/TestLinearMeteorite.tscn" id="1_q4flr"]
+[ext_resource type="PackedScene" uid="uid://btoaewv6i4jlg" path="res://TestLab/EnemyLab/Components/RandomWalkerBehaviour.tscn" id="3_74swo"]
+[ext_resource type="Texture2D" uid="uid://djx83hu8a7nfi" path="res://Assets/CelestialObjectsPack/CelestialObjects.png" id="3_bn7uy"]
 
 [node name="EnemyLab" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(35.9953, 19.4231)
-color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.729412, 0.678431, 0.835294, 1)
+self_modulate = Color(0.952941, 0.952941, 0.952941, 1)
+offset_right = 1024.0
+offset_bottom = 1024.0
+scale = Vector2(1.28, 1)
+texture = ExtResource("1_gq37b")
 
 [node name="TestEnemy" parent="." instance=ExtResource("1_q4flr")]
 position = Vector2(340.082, 328.836)
 
+[node name="EnemySprite" parent="TestEnemy/Graphics" index="0"]
+modulate = Color(1, 0.541176, 1, 1)
+
+[node name="EnemySprite2" type="Sprite2D" parent="TestEnemy/Graphics" index="1"]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(2.635, 2.635)
+texture = ExtResource("3_bn7uy")
+region_enabled = true
+region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
+
+[node name="EnemySprite3" type="Sprite2D" parent="TestEnemy/Graphics" index="2"]
+modulate = Color(0, 1, 0.227451, 1)
+scale = Vector2(1.97, 1.97)
+texture = ExtResource("3_bn7uy")
+region_enabled = true
+region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
+
 [node name="MovementComponent" parent="TestEnemy" index="2"]
 speed = 6.8
 
+[node name="RandomWalkerBehaviour" parent="TestEnemy" node_paths=PackedStringArray("movementComponent") instance=ExtResource("3_74swo")]
+movementComponent = NodePath("../MovementComponent")
+
 [node name="TestEnemy2" parent="." instance=ExtResource("1_q4flr")]
+modulate = Color(0.584314, 1, 1, 1)
 position = Vector2(678, 444)
 
 [node name="MovementComponent" parent="TestEnemy2" index="2"]
@@ -26,6 +52,7 @@ speed = 8.0
 position = Vector2(-191, 41)
 
 [node name="TestEnemy3" parent="." instance=ExtResource("1_q4flr")]
+modulate = Color(1, 1, 0.639216, 1)
 position = Vector2(903, 510)
 
 [node name="MovementComponent" parent="TestEnemy3" index="2"]
@@ -35,6 +62,7 @@ speed = 6.4
 position = Vector2(-1, -228)
 
 [node name="TestEnemy4" parent="." instance=ExtResource("1_q4flr")]
+modulate = Color(0.494118, 1, 0.521569, 1)
 position = Vector2(800, 171)
 
 [node name="MovementComponent" parent="TestEnemy4" index="2"]

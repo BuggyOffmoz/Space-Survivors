@@ -23,8 +23,8 @@ func _input(event):
 
 
 func _on_start_pressed():
-	#$Players/BaseShip.assigned_device = players[0]
-	$Players/BaseTurret.assigned_device = players[0]
+	$Players/BaseShip.assigned_device = players[0]
+	#$Players/BaseTurret.assigned_device = players[0]
 	%Players.visible = true
 	#$EnemySpawner.active = true
 	$EnemySpawner.spawn_enemy()

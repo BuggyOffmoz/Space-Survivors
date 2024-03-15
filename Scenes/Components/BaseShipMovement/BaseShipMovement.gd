@@ -25,7 +25,7 @@ func _input_event(event):
 			move_y = event.axis_value
 		last_direction = Vector2(move_x,move_y)
 	
-	
+
 
 
 func _physics_process_(delta):
@@ -38,7 +38,7 @@ func _physics_process_(delta):
 
 func normal_movement(_chase:=false):
 	if move_x != 0 or move_y != 0:
-		#ship.global_position += Vector2(move_x,move_y).normalized() * 9
+		ship.global_position += Vector2(move_x,move_y).normalized() * 9
 		graphics.rotation = Vector2(move_x,move_y).angle() - deg_to_rad(270)
 
 func restore(_last_direction:Vector2) -> void:

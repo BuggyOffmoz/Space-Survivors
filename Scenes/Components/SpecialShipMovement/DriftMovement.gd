@@ -1,9 +1,9 @@
 extends Node2D
 
 
-@export var MovementComponent : BaseShipMovement
-@export var ship : BaseShip
-@export var graphics : Node2D
+@onready var ship : BaseShip = get_parent().owner
+@onready var MovementComponent := ship.normal_movement
+@onready var graphics : Node2D = ship.get_node("Graphics")
 
 var fact = 0.007
 
@@ -101,7 +101,7 @@ func verify_drift_direction():
 
 func release_drift():
 	ship.MovementComponent.restore(Vector2(move_x,move_y))
-	ship.actual_movement = ship.MovementComponent
+	ship.change_movement_state(BaseShip.ship_states.NORMAL)
 	
 	is_drifting = false
 	special_cooldow = true

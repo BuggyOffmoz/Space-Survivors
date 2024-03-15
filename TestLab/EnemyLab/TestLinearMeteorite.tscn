@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://crcpxotq6pted"]
+
+[ext_resource type="Texture2D" uid="uid://djx83hu8a7nfi" path="res://Assets/CelestialObjectsPack/CelestialObjects.png" id="1_n0van"]
+[ext_resource type="PackedScene" uid="uid://diuejpqjc7bjv" path="res://TestLab/EnemyLab/Components/MovementComponent.tscn" id="2_upbk8"]
+[ext_resource type="PackedScene" uid="uid://bqlmc1nq4fckb" path="res://TestLab/EnemyLab/Components/ToroidalMovement.tscn" id="3_qm743"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_llkv7"]
+radius = 14.0357
+
+[node name="TestEnemy" type="Area2D"]
+position = Vector2(641, 382)
+collision_layer = 2048
+collision_mask = 0
+monitoring = false
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="EnemySprite" type="Sprite2D" parent="Graphics"]
+position = Vector2(1.90735e-06, 1.90735e-06)
+scale = Vector2(2.96487, 2.96487)
+texture = ExtResource("1_n0van")
+region_enabled = true
+region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_llkv7")
+disabled = true
+
+[node name="MovementComponent" parent="." instance=ExtResource("2_upbk8")]
+speed = 10.0
+
+[node name="targetVector" type="Marker2D" parent="MovementComponent"]
+position = Vector2(111, -57)
+
+[node name="ToroidalMovement" parent="." instance=ExtResource("3_qm743")]

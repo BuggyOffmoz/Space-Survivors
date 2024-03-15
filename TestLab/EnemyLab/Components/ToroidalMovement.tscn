@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqlmc1nq4fckb"]
+
+[ext_resource type="Script" path="res://TestLab/EnemyLab/Components/ToroidalMovement.gd" id="1_dvtfd"]
+
+[node name="ToroidalMovement" type="Node"]
+script = ExtResource("1_dvtfd")

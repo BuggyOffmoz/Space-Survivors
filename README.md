@@ -36,7 +36,7 @@ ___
 
 ```gdscript
 func my_function(a, b, c):
-    pass
+	pass
 ```
 
 ## Comments

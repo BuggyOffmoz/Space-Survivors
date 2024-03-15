@@ -14,7 +14,10 @@ color = Color(0.0470588, 0.0470588, 0.0470588, 1)
 position = Vector2(340.082, 328.836)
 
 [node name="MovementComponent" parent="TestEnemy" index="2"]
-speed = 6.8
+speed = 0.7
+
+[node name="targetVector" parent="TestEnemy/MovementComponent" index="0"]
+position = Vector2(548.918, -6.836)
 
 [node name="TestEnemy2" parent="." instance=ExtResource("1_q4flr")]
 position = Vector2(678, 444)

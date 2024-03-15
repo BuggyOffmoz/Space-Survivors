@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ShipConfig" load_steps=3 format=3 uid="uid://b3u0que1t7yxk"]
+
+[ext_resource type="Script" path="res://Resources/ShipConfigs/ShipConfigs.gd" id="1_mqyc3"]
+[ext_resource type="PackedScene" uid="uid://cenb2smu55mvy" path="res://Scenes/Components/SpecialShipMovement/DriftMovement.tscn" id="1_pwlqk"]
+
+[resource]
+script = ExtResource("1_mqyc3")
+drift_movement = ExtResource("1_pwlqk")

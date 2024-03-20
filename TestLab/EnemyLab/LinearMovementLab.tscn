@@ -17,6 +17,7 @@ texture = ExtResource("1_gq37b")
 
 [node name="TestEnemy" parent="." instance=ExtResource("1_q4flr")]
 position = Vector2(340.082, 328.836)
+scale = Vector2(0.5, 0.5)
 
 [node name="EnemySprite" parent="TestEnemy/Graphics" index="0"]
 modulate = Color(1, 0.541176, 1, 1)
@@ -29,8 +30,8 @@ region_enabled = true
 region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
 
 [node name="EnemySprite3" type="Sprite2D" parent="TestEnemy/Graphics" index="2"]
-modulate = Color(0, 1, 0.227451, 1)
-scale = Vector2(1.97, 1.97)
+modulate = Color(0.592157, 0.592157, 0.592157, 1)
+scale = Vector2(1.705, 1.705)
 texture = ExtResource("3_bn7uy")
 region_enabled = true
 region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
@@ -40,6 +41,79 @@ speed = 6.8
 
 [node name="RandomWalkerBehaviour" parent="TestEnemy" node_paths=PackedStringArray("movementComponent") instance=ExtResource("3_74swo")]
 movementComponent = NodePath("../MovementComponent")
+randomDelay = true
+delaySeconds = 0.179
+minRandomDelay = null
+maxRandomDelay = 16.051
+randomSpeed = true
+fixedSpeed = 20.767
+minRandomSpeed = 9.395
+maxRandomSpeed = 26.752
+
+[node name="TestEnemy7" parent="." instance=ExtResource("1_q4flr")]
+position = Vector2(579, 342)
+
+[node name="EnemySprite" parent="TestEnemy7/Graphics" index="0"]
+modulate = Color(1, 0.541176, 1, 1)
+
+[node name="EnemySprite2" type="Sprite2D" parent="TestEnemy7/Graphics" index="1"]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(2.635, 2.635)
+texture = ExtResource("3_bn7uy")
+region_enabled = true
+region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
+
+[node name="EnemySprite3" type="Sprite2D" parent="TestEnemy7/Graphics" index="2"]
+modulate = Color(0.592157, 0.592157, 0.592157, 1)
+scale = Vector2(1.705, 1.705)
+texture = ExtResource("3_bn7uy")
+region_enabled = true
+region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
+
+[node name="MovementComponent" parent="TestEnemy7" index="2"]
+speed = 6.8
+
+[node name="RandomWalkerBehaviour" parent="TestEnemy7" node_paths=PackedStringArray("movementComponent") instance=ExtResource("3_74swo")]
+movementComponent = NodePath("../MovementComponent")
+minRandomDelay = null
+maxRandomDelay = null
+randomSpeed = true
+fixedSpeed = 30.0
+minRandomSpeed = null
+maxRandomSpeed = null
+
+[node name="TestEnemy6" parent="." instance=ExtResource("1_q4flr")]
+position = Vector2(955, 344)
+
+[node name="EnemySprite" parent="TestEnemy6/Graphics" index="0"]
+modulate = Color(1, 0.541176, 1, 1)
+
+[node name="EnemySprite2" type="Sprite2D" parent="TestEnemy6/Graphics" index="1"]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(2.635, 2.635)
+texture = ExtResource("3_bn7uy")
+region_enabled = true
+region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
+
+[node name="EnemySprite3" type="Sprite2D" parent="TestEnemy6/Graphics" index="2"]
+modulate = Color(0.592157, 0.592157, 0.592157, 1)
+scale = Vector2(1.705, 1.705)
+texture = ExtResource("3_bn7uy")
+region_enabled = true
+region_rect = Rect2(131.009, 226.715, 24.6748, 29.2846)
+
+[node name="MovementComponent" parent="TestEnemy6" index="2"]
+speed = 6.8
+
+[node name="RandomWalkerBehaviour" parent="TestEnemy6" node_paths=PackedStringArray("movementComponent") instance=ExtResource("3_74swo")]
+movementComponent = NodePath("../MovementComponent")
+delaySeconds = 3.553
+minRandomDelay = 1.46
+maxRandomDelay = 24.127
+randomSpeed = false
+fixedSpeed = 8.946
+minRandomSpeed = null
+maxRandomSpeed = null
 
 [node name="TestEnemy2" parent="." instance=ExtResource("1_q4flr")]
 modulate = Color(0.584314, 1, 1, 1)
@@ -81,6 +155,8 @@ speed = 0.6
 position = Vector2(245, 85)
 
 [editable path="TestEnemy"]
+[editable path="TestEnemy7"]
+[editable path="TestEnemy6"]
 [editable path="TestEnemy2"]
 [editable path="TestEnemy3"]
 [editable path="TestEnemy4"]

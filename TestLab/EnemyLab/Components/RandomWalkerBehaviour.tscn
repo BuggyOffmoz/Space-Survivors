@@ -4,3 +4,7 @@
 
 [node name="RandomWalkerBehaviour" type="Node"]
 script = ExtResource("1_3jofx")
+minRandomDelay = null
+maxRandomDelay = null
+minRandomSpeed = null
+maxRandomSpeed = null
